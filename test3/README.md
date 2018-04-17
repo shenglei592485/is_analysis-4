@@ -15,9 +15,9 @@ package "图书管理系统" #DDDDDD {
 
 	class Librarian {
 		 __ private data __
-	 	-String username
+	 	-String LibrarianName
 	 	-- encrypted --
-	 	-String password
+	 	-String LibrarianPassWord
 		 __ public method __
 		+维护图书()
 		+还原图书()
@@ -27,9 +27,9 @@ package "图书管理系统" #DDDDDD {
 	}
 	class Administor {
 		 __ private data __
-	 	-String username
+	 	-String AdministorName
 	 	-- encrypted --
-	 	-String password
+	 	-String AdministorPassWord
 		 __ public method __
 	 	+维护Librarian信息()
 	 	+维护图书信息()
@@ -38,9 +38,9 @@ package "图书管理系统" #DDDDDD {
 	}
 	class Borrower {
 	 	__ private data __
-	 	-String username
+	 	-String BorrowerName
 	 	-- encrypted --
-	 	-String password
+	 	-String BorrowerPassWord
 		 __ public method __
 		+查询借阅信息()
 		+查询图书()
