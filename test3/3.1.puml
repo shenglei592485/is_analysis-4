@@ -1,0 +1,71 @@
+@startuml
+package "图书管理系统" #DDDDDD {
+
+	class Librarian {
+		 __ private data __
+	 	-String LibrarianName
+	 	-- encrypted --
+	 	-String LibrarianPassWord
+		 __ public method __
+		+维护图书()
+		+还原图书()
+		+借出图书()
+		+维护借阅信息()
+
+	}
+	class Administor {
+		 __ private data __
+	 	-String AdministorName
+	 	-- encrypted --
+	 	-String AdministorPassWord
+		 __ public method __
+	 	+维护Librarian信息()
+	 	+维护图书信息()
+	 	+维护Borrower信息()
+	)
+	}
+	class Borrower {
+	 	__ private data __
+	 	-String BorrowerName
+	 	-- encrypted --
+	 	-String BorrowerPassWord
+		 __ public method __
+		+查询借阅信息()
+		+查询图书()
+		+借阅图书()
+		+还书()
+		+缴纳罚金()
+	}
+
+
+	class 图书 {
+		__ private data __
+	 	-书名
+	 	-总量
+	 	-库存
+	 	-价格
+	 	-出版社
+	 	-简介
+	 	-作者
+	}
+
+	class 借书记录 {
+		__ private data __
+	 	-借阅者信息
+	 	-借出时间
+	 	-归还期限
+	}
+
+
+
+	Librarian <|-- Administor : 维护图书管理员信息
+	Borrower "1" *-- "N" 借书记录 : 借书和还书
+	借书记录 "1" o-- "1" 图书
+	借书记录 "N" -- "1" Librarian : 记录和还原
+	Librarian "N" --- "N" 图书 : 维护图书
+	Librarian "N" -- "N" Borrower
+
+
+}
+
+@enduml
