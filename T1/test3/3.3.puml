@@ -1,0 +1,18 @@
+@startuml
+object Librarian {
+		 username = "LibrarianName"
+		 userid = "LibrarianId"
+		 password = "LibrarianPassWord"
+}
+object Administor {
+		 username = "AdministorName"
+		 password = "AdministorPassWord"
+
+}
+
+object Borrower {
+	 	username = "BorrowerName"
+	 	userid = "BorrowerId"
+		password = "BorrowerPassWord"
+}
+@enduml
