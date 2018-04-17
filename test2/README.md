@@ -47,7 +47,7 @@
     }
     @enduml
 ### 1.2用例图如下：
-![](p1.png)
+![](borrowbook.png)
 
 ## 2.参与者说明
 ### 2.1 系统管理员（Administor）
@@ -130,4 +130,4 @@ stop
 @enduml
  ```
 ### 3.4.1“归还图书”用例流程图如下：
-![](p3.png)
+![](returnbook.png)
