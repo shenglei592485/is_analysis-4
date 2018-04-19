@@ -1,0 +1,13 @@
+@startuml
+object 图书 {
+	 	书名 = "bookname"
+	 	ISBN号 = "ISBNumber"
+	 	总量 = "Allbooknumber"
+	 	库存 = "booknumber"
+	 	价格 = "price"
+	 	出版社 = "Press"
+	 	简介 = "Book Introduction"
+	 	作者 = "author"
+}
+
+@enduml
