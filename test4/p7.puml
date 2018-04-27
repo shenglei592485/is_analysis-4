@@ -1,0 +1,32 @@
+@startuml
+actor Administor
+participant "Login System" as A
+participant "Book Search System" as B
+participant "Data Base" as C
+
+Administor-> A: 1:验证身份
+activate Administor
+activate A
+A-->Administor: 2: 返回信息
+deactivate A
+
+Administor->B::             3:查找Borrower信息
+activate B
+deactivate Administor
+B->C::   4:查找信息
+activate C
+C->C:5:检查Borrower信息
+deactivate B
+C-->B:6:返回Borrower信息
+deactivate C
+activate B
+
+Administor->B::         7:删除Borrower信息
+activate Administor
+B-->Administor::          8:返回删除信息
+deactivate B
+deactivate Administor
+
+
+
+@enduml

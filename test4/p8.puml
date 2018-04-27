@@ -1,0 +1,24 @@
+@startuml
+actor Administor
+participant "Login System" as A
+participant "Data Base" as B
+actor "Librarian" as C
+Administor-> A: 1:验证身份
+activate Administor
+activate A
+A-->Administor: 2: 返回信息
+deactivate A
+
+Administor->B::   3:向数据库中添加Librarian账户
+deactivate Administor
+activate B
+B->B:4:检查账户
+B-->Administor::  5:返回添加的Librarian信息
+deactivate B
+activate Administor
+Administor->C::             6:将新开的账户给Librarian
+
+activate C
+deactivate Administor
+deactivate C
+@enduml

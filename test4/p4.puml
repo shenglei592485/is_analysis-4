@@ -1,0 +1,32 @@
+@startuml
+actor Administor
+participant "Login System" as A
+participant "Check Info" as B
+participant "New Book Reg" as C
+participant "Scanner" as D
+
+Administor->A:1:登录系统
+activate Administor
+activate A
+deactivate Administor
+
+A->B:2:查找（Uname and Passwd）
+activate B
+deactivate A
+B->B:3:校验信息
+A->C::                       4:选择新书注册
+
+deactivate B
+Administor->D:5:扫描图书ISBNumber
+activate  Administor
+activate D
+D-->B:6：查找图书ISBNumber
+deactivate D
+activate B
+B->B:7:检验（是否已存在）
+deactivate Administor
+B->C:8:注册成功或者失败
+activate C
+deactivate C
+deactivate B
+@enduml

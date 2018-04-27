@@ -1,0 +1,31 @@
+@startuml
+actor Borrower
+participant "Login System" as A
+participant "Check Info" as B
+participant "Book Search System" as C
+participant "Data Base" as D
+
+Borrower->A:1:登录系统
+activate Borrower
+activate A
+deactivate Borrower
+
+A->B:2:查找（Uname and Passwd）
+activate B
+deactivate A
+B->B:3:校验信息
+
+
+A->C::                                 4:进入
+deactivate B
+activate A
+activate C
+
+
+C->D:5:查询条件
+deactivate A
+activate D
+D-->C:6:返回查找结果
+deactivate D
+deactivate C
+@enduml

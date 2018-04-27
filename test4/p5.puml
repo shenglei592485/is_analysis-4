@@ -1,0 +1,28 @@
+@startuml
+
+actor Administor
+participant "Login System" as A
+participant "Data Base" as B
+participant "Book Record" as C
+
+Administor->A:1:登录系统
+activate Administor
+
+
+Administor->B::          2:删除图书书目
+activate B
+deactivate Administor
+
+B->C:3:删除馆藏书目
+activate C
+deactivate B
+C-->B:4:返回删除信息
+deactivate C
+activate B
+B->B:5:更新数据库
+
+B-->Administor:6:删除成功
+activate Administor
+deactivate B
+deactivate Administor
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+actor Librarian
+participant "Login System" as A
+participant "Book Record" as B
+participant "Borrower Record" as C
+actor "Borrower" as D
+
+
+Librarian -> A: 1:验证身份
+activate Librarian
+activate A
+A->Librarian: 2: 返回信息
+deactivate A
+
+D -->Librarian::                                       3:发出借书请求
+activate D
+deactivate D
+deactivate Librarian
+Librarian -> C::                        4:扫描BorrowerID
+activate Librarian
+deactivate Librarian
+activate C
+C->C:5:借阅图书信息
+C -->Librarian::                       6:返回读者信息
+deactivate C
+activate Librarian
+Librarian -> B::           7:扫描书籍ID
+activate B
+deactivate Librarian
+B-->Librarian::      8:返回该书籍信息
+
+activate Librarian
+deactivate Librarian
+
+B->B:9:记录书籍借出
+B-->Librarian::         10:借阅成功
+deactivate B
+
+activate Librarian
+Librarian ->D::                                      10:将书给Borrower
+deactivate Librarian
+
+@enduml
