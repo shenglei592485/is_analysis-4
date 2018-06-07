@@ -1,0 +1,49 @@
+@startuml
+
+
+
+
+rectangle "学生"
+rectangle "老师"
+rectangle "查看或修改个人信息"
+rectangle "修改密码"
+rectangle "登出系统"
+rectangle "登录系统"
+
+
+rectangle "选择学期"
+rectangle "选择学习课程"
+rectangle "查看各学期和课程的成绩和评价" as r1
+rectangle "查看该课程考核内容和要求"
+学生 -down-> 登出系统
+学生 -down-> 登录系统
+学生 -down-> 查看或修改个人信息
+学生 -down-> 修改密码
+学生 -down-> 选择学期 : 默认\n当前\n学期
+选择学期 -down-> 选择学习课程 : 显示\n课程\n列表
+选择学习课程 -down-> r1
+选择学习课程 -down-> 查看该课程考核内容和要求
+
+
+
+
+rectangle "选择任教课程"
+rectangle "新建课程"
+rectangle "显示本课程学生列表"
+
+rectangle "填写课程信息"
+rectangle "增删改查本课程考核内容和要求"
+rectangle "查看和评定学生成绩" as r2
+
+老师 -[#33a3dc]down-> 登出系统
+老师 -[#33a3dc]down-> 登录系统
+老师 -[#33a3dc]down-> 查看或修改个人信息
+老师 -[#33a3dc]down-> 修改密码
+老师 -[#33a3dc]down-> 选择任教课程
+老师 -[#33a3dc]down-> 新建课程
+选择任教课程 -[#33a3dc]down-> 显示本课程学生列表
+选择任教课程 -[#33a3dc]down-> 填写课程信息
+新建课程 -[#33a3dc]down-> 填写课程信息
+显示本课程学生列表 -[#33a3dc]down-> r2
+填写课程信息 -[#33a3dc]down-> 增删改查本课程考核内容和要求
+@enduml
