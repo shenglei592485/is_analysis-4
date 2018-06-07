@@ -1,4 +1,4 @@
-# 接口：getScores  [返回](../../README.md)
+# 接口：getScores  [返回](../README.md)
 用例： [查看成绩列表](../用例1/查看成绩列表.md)
 
 - 功能：

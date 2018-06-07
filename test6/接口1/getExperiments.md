@@ -1,4 +1,4 @@
-# 接口：getExperiments  [返回](../../README.md)
+# 接口：getExperiments  [返回](../README.md)
 用例： [查看实验列表](../用例1/查看实验列表.md)
 
 - 功能：
